@@ -10,11 +10,13 @@ import Login from '../Components/auth/Login'
 import Register from '../Components/auth/Register'
 import Pnf from '../Components/default/Pnf'
 import SingleProdcut from '../Screen/Product/SingleProdcut'
+import PrivateRouter from '../PrivateRouter/PrivateRouter'
 
 
 function Container() {
   return (
     <Routes>
+           <Route element={<PrivateRouter/>}>
            <Route path={`/`} element={<Home/>}>
                   <Route path={`/`} element={<Store/>}/>
                   <Route path={`/product/:id`} element={<SingleProdcut/>}/>
@@ -23,6 +25,7 @@ function Container() {
            </Route>
            <Route path={`/about`} element={<About/>}/>
            <Route path={`/contact`} element={<Contact/>}/>
+           </Route>
            <Route path={`/login`} element={<Login/>}/>
            <Route path={`/register`} element={<Register/>}/>
            <Route path={`/*`} element={<Pnf/>}/>
